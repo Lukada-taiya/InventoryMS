@@ -35,7 +35,7 @@ function App() {
           element={
             <>
               <PageTitle title="Dashboard | BowMarie" />
-              <Dashboard />
+              <SignUp />
             </>
           }
         />
@@ -72,6 +72,24 @@ function App() {
             <>
               <PageTitle title="Alerts | BowMarie" />
               <Settings />
+            </>
+          }
+        />
+        <Route
+          path="/signin"
+          element={
+            <>
+              <PageTitle title="Alerts | BowMarie" />
+              <SignIn />
+            </>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <>
+              <PageTitle title="Alerts | BowMarie" />
+              <SignUp />
             </>
           }
         />

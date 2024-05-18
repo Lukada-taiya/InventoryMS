@@ -4,27 +4,31 @@ import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import LogoDark from '../../images/logo/logo-dark.svg';
 import Logo from '../../images/logo/logo.svg';
 import DefaultLayout from '../../layout/DefaultLayout';
+import Header from '../../components/Header';
+import logoBlue from '../../images/logo/logoblue1.png';
+import hotel from '../../images/logo/hotel.jpg';
 
 const SignUp: React.FC = () => {
   return (
-    <DefaultLayout>
-      <Breadcrumb pageName="Sign Up" />
+    <>
+      <Header showUser={false} />
 
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="flex flex-wrap items-center">
-          <div className="hidden w-full xl:block xl:w-1/2">
+          <div className="hidden w-full xl:block xl:w-2/5">
             <div className="py-17.5 px-26 text-center">
               <Link className="mb-5.5 inline-block" to="/">
-                <img className="hidden dark:block" src={Logo} alt="Logo" />
-                <img className="dark:hidden" src={LogoDark} alt="Logo" />
+                {/* <img className="hidden dark:block" src={Logo} alt="Logo" /> */}
+                <img className="h-35 w-full rounded-lg object-cover object-center" src={logoBlue} alt="Logo" />
               </Link>
-              <p className="2xl:px-20">
+              <p className="2xl:px-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 suspendisse.
               </p>
 
-              <span className="mt-15 inline-block">
-                <svg
+              <span className="mb-4 inline-block">
+                <img src={hotel} alt="Logo" />
+                {/* <svg
                   width="350"
                   height="350"
                   viewBox="0 0 350 350"
@@ -143,7 +147,7 @@ const SignUp: React.FC = () => {
                     d="M310.566 183.213C309.132 182.066 307.174 184.151 307.174 184.151L306.026 173.828C306.026 173.828 298.853 174.687 294.261 173.542C289.67 172.396 288.953 177.7 288.953 177.7C288.716 175.557 288.668 173.399 288.81 171.248C289.096 168.667 292.827 166.087 299.427 164.366C306.026 162.646 309.47 170.101 309.47 170.101C314.061 172.395 312.001 184.36 310.566 183.213Z"
                     fill="#1C2434"
                   />
-                </svg>
+                </svg> */}
               </span>
             </div>
           </div>
@@ -157,14 +161,14 @@ const SignUp: React.FC = () => {
 
               <form>
                 <div className="mb-4">
-                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  <label className="mb-1 block font-medium text-black dark:text-white">
                     Name
                   </label>
                   <div className="relative">
                     <input
                       type="text"
                       placeholder="Enter your full name"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-3 pl-3 pr-5 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -192,14 +196,14 @@ const SignUp: React.FC = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  <label className="mb-1 block font-medium text-black dark:text-white">
                     Email
                   </label>
                   <div className="relative">
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-3 pl-3 pr-5 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -223,14 +227,14 @@ const SignUp: React.FC = () => {
                 </div>
 
                 <div className="mb-4">
-                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  <label className="mb-1 block font-medium text-black dark:text-white">
                     Password
                   </label>
                   <div className="relative">
                     <input
                       type="password"
                       placeholder="Enter your password"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-3 pl-3 pr-5 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -258,14 +262,14 @@ const SignUp: React.FC = () => {
                 </div>
 
                 <div className="mb-6">
-                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  <label className="mb-1 block font-medium text-black dark:text-white">
                     Re-type Password
                   </label>
                   <div className="relative">
                     <input
                       type="password"
                       placeholder="Re-enter your password"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-3 pl-3 pr-5 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -292,7 +296,7 @@ const SignUp: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-5">
+                <div className="mb-6">
                   <input
                     type="submit"
                     value="Create account"
@@ -300,7 +304,7 @@ const SignUp: React.FC = () => {
                   />
                 </div>
 
-                <button className="flex w-full items-center justify-center gap-3.5 rounded-lg border border-stroke bg-gray p-4 hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:hover:bg-opacity-50">
+                {/* <button className="flex w-full items-center justify-center gap-3.5 rounded-lg border border-stroke bg-gray p-4 hover:bg-opacity-50 dark:border-strokedark dark:bg-meta-4 dark:hover:bg-opacity-50">
                   <span>
                     <svg
                       width="20"
@@ -335,12 +339,12 @@ const SignUp: React.FC = () => {
                     </svg>
                   </span>
                   Sign up with Google
-                </button>
+                </button> */}
 
                 <div className="mt-6 text-center">
                   <p>
                     Already have an account?{' '}
-                    <Link to="/auth/signin" className="text-primary">
+                    <Link to="/signin" className="text-primary">
                       Sign in
                     </Link>
                   </p>
@@ -350,7 +354,7 @@ const SignUp: React.FC = () => {
           </div>
         </div>
       </div>
-    </DefaultLayout>
+    </>
   );
 };
 
