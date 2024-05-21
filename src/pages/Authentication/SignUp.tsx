@@ -8,7 +8,28 @@ import Header from '../../components/Header';
 import logoBlue from '../../images/logo/logoblue1.png';
 import hotel from '../../images/logo/hotel.jpg';
 
+interface StateTypes {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 const SignUp: React.FC = () => {
+
+  const [state, setState] = React.useState<StateTypes>({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const updateState = (key: string, value: string) => {
+    setState((prevState) => ({
+      ...prevState,
+      [key]: value,
+    }));
+  }
   return (
     <>
       <Header showUser={false} />

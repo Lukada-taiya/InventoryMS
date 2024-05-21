@@ -35,7 +35,7 @@ function App() {
           element={
             <>
               <PageTitle title="Dashboard | BowMarie" />
-              <SignUp />
+              <Dashboard />
             </>
           }
         />

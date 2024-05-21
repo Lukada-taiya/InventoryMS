@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
 import LogoDark from '../../images/logo/logo-dark.svg';
@@ -8,7 +8,22 @@ import Header from '../../components/Header';
 import logoBlue from '../../images/logo/logoblue1.png';
 import hotel from '../../images/logo/hotel.jpg';
 
+interface StateTypes {
+  email: string;
+  password: string;
+}
+
 const SignIn: React.FC = () => {
+
+  const [states, setStates] = useState<StateTypes>({
+    email: '',
+    password: '',
+  });
+
+  const updateStates = (key: string, value: string) => {
+    setStates((prev: any)=>({ ...states, [key]: value }));
+  };
+  
   return (
     <>
       <Header showUser={false}/>
