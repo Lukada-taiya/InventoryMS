@@ -63,10 +63,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-      <Link className="inline-block" to="/">
-      <img className="h-20 w-full rounded-lg object-cover object-center" src={logoBlue} alt="Logo" />
-    </Link>
+      <div className="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5">
+        <Link className="inline-block" to="/">
+        <img className="h-15 w-full rounded-lg object-cover object-center" src={logoBlue} alt="Logo" />
+        </Link>
         {/* <NavLink to="/">
           <img src={Logo} alt="Logo" />
         </NavLink> */}
