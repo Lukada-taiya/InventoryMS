@@ -38,11 +38,11 @@ const SignIn: React.FC = () => {
                 <img className="dark:hidden h-30 w-full rounded-lg object-cover object-center" src={bow} alt="Logo" />
               </Link>
 
-              <p className="2xl:px-20">
+              <p className="2xl:px-20 mb-5.5">
                 A Place of True Relaxation and Accommodation for Everyone
               </p>
                
-               <span className='mb-2 inline-block'>
+               <span className='mb-4 inline-block'>
                 <img src={hotel} alt="hotel" />
                </span>
               {/* <span className="mt-15 inline-block">
@@ -170,7 +170,7 @@ const SignIn: React.FC = () => {
             </div>
           </div>
 
-          <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
+          <div className="w-full border-stroke dark:border-strokedark xl:w-2/5 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
               {/* <span className="mb-1.5 block font-medium">Start for free</span> */}
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
