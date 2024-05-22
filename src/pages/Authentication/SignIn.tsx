@@ -31,7 +31,7 @@ const SignIn: React.FC = () => {
 
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="flex flex-wrap items-center">
-          <div className="hidden w-full xl:block xl:w-1/2">
+          <div className="hidden w-full xl:block xl:w-2/5">
             <div className="py-17.5 px-26 text-center">
               <Link className="mb-5.5 inline-block" to="/">
                 <img className="hidden h-20 w-full rounded-lg object-cover object-center dark:block" src={logoBlue} alt="Logo" />
@@ -42,7 +42,9 @@ const SignIn: React.FC = () => {
                 A Place of True Relaxation and Accommodation for Everyone
               </p>
                
-              <img src={hotel} alt="hotel" className="mt-3 inline-block" />
+               <span className='mb-2 inline-block'>
+                <img src={hotel} alt="hotel" />
+               </span>
               {/* <span className="mt-15 inline-block">
                 <svg
                   width="350"
@@ -209,7 +211,7 @@ const SignIn: React.FC = () => {
 
                 <div className="mb-6">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
-                    Re-type Password
+                    Password
                   </label>
                   <div className="relative">
                     <input
