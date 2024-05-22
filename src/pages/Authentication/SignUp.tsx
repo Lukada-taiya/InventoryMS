@@ -8,6 +8,7 @@ import Header from '../../components/Header';
 import logoBlue from '../../images/logo/logoblue1.png';
 import hotel from '../../images/logo/hotel.jpg';
 import bow from '../../images/logo/bow.jpg';
+import building from '../../images/cover/building.png';
 
 interface StateTypes {
   name: string;
@@ -48,7 +49,7 @@ const SignUp: React.FC = () => {
               </p>
 
               <span className="mb-4 inline-block">
-                <img src={hotel} alt="Logo" />
+                <img src={building} alt="Logo" />
                 {/* <svg
                   width="350"
                   height="350"
