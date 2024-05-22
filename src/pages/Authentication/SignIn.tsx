@@ -7,6 +7,7 @@ import DefaultLayout from '../layout/DefaultLayout';
 import Header from '../../components/Header';
 import logoBlue from '../../images/logo/logoblue1.png';
 import hotel from '../../images/logo/hotel.jpg';
+import bow from '../../images/logo/bow.jpg';
 
 interface StateTypes {
   email: string;
@@ -23,7 +24,7 @@ const SignIn: React.FC = () => {
   const updateStates = (key: string, value: string) => {
     setStates((prev: any)=>({ ...states, [key]: value }));
   };
-  
+
   return (
     <>
       <Header showUser={false}/>
@@ -33,13 +34,12 @@ const SignIn: React.FC = () => {
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
               <Link className="mb-5.5 inline-block" to="/">
-                {/* <img className="hidden dark:block" src={Logo} alt="Logo" /> */}
-                <img className=" h-35 w-full rounded-lg object-cover object-center" src={logoBlue} alt="Logo" />
+                <img className="hidden h-20 w-full rounded-lg object-cover object-center dark:block" src={logoBlue} alt="Logo" />
+                <img className="dark:hidden h-30 w-full rounded-lg object-cover object-center" src={bow} alt="Logo" />
               </Link>
 
               <p className="2xl:px-20">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                suspendisse.
+                A Place of True Relaxation and Accommodation for Everyone
               </p>
                
               <img src={hotel} alt="hotel" className="mt-3 inline-block" />
@@ -170,9 +170,9 @@ const SignIn: React.FC = () => {
 
           <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
-              <span className="mb-1.5 block font-medium">Start for free</span>
+              {/* <span className="mb-1.5 block font-medium">Start for free</span> */}
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
-                Sign In to TailAdmin
+                Sign In to InventoryMS
               </h2>
 
               <form>
@@ -214,7 +214,7 @@ const SignIn: React.FC = () => {
                   <div className="relative">
                     <input
                       type="password"
-                      placeholder="6+ Characters, 1 Capital letter"
+                      placeholder="Re-enter your password"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 

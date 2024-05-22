@@ -7,6 +7,7 @@ import DefaultLayout from '../../layout/DefaultLayout';
 import Header from '../../components/Header';
 import logoBlue from '../../images/logo/logoblue1.png';
 import hotel from '../../images/logo/hotel.jpg';
+import bow from '../../images/logo/bow.jpg';
 
 interface StateTypes {
   name: string;
@@ -39,12 +40,11 @@ const SignUp: React.FC = () => {
           <div className="hidden w-full xl:block xl:w-2/5">
             <div className="py-17.5 px-26 text-center">
               <Link className="mb-5.5 inline-block" to="/">
-                {/* <img className="hidden dark:block" src={Logo} alt="Logo" /> */}
-                <img className="h-35 w-full rounded-lg object-cover object-center" src={logoBlue} alt="Logo" />
+                <img className="hidden h-20 w-full rounded-lg object-cover object-center dark:block" src={logoBlue} alt="Logo" />
+                <img className="dark:hidden h-30 w-full rounded-lg object-cover object-center" src={bow} alt="Logo" />
               </Link>
-              <p className="2xl:px-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                suspendisse.
+              <p className="2xl:px-10 mb-5.5">
+                Experience Inspired by The Volta Lake.
               </p>
 
               <span className="mb-4 inline-block">
@@ -175,9 +175,9 @@ const SignUp: React.FC = () => {
 
           <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
-              <span className="mb-1.5 block font-medium">Start for free</span>
+              {/* <span className="mb-1.5 block font-medium">Start for free</span> */}
               <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
-                Sign Up to TailAdmin
+                Sign Up to InventoryMS
               </h2>
 
               <form>
