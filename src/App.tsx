@@ -75,6 +75,24 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/signin"
+          element={
+            <>
+              <PageTitle title="Alerts | BowMarie" />
+              <SignIn />
+            </>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <>
+              <PageTitle title="Alerts | BowMarie" />
+              <SignUp />
+            </>
+          }
+        />
       </Routes>
     </>
   );
