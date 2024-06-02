@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Breadcrumb from '../../components/Breadcrumbs/Breadcrumb';
-import LogoDark from '../../images/logo/logo-dark.svg';
-import Logo from '../../images/logo/logo.svg';
-import DefaultLayout from '../layout/DefaultLayout';
+import { Link } from 'react-router-dom'; 
 import Header from '../../components/Header';
-import logoBlue from '../../images/logo/logoblue1.png';
-import hotel from '../../images/logo/hotel.jpg';
+import logoBlue from '../../images/logo/logoblue1.png'; 
 import bow from '../../images/logo/bow.jpg';
 import building from '../../images/cover/building.png';
 
@@ -217,7 +212,7 @@ const SignIn: React.FC = () => {
                   <div className="relative">
                     <input
                       type="password"
-                      placeholder="Re-enter your password"
+                      placeholder="Enter your password"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                     />
 
