@@ -4,13 +4,9 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import Loader from './common/Loader';
 import PageTitle from './components/PageTitle';
 import SignIn from './pages/Authentication/SignIn';
-import SignUp from './pages/Authentication/SignUp'; 
-import FormElements from './pages/Form/FormElements';
-import FormLayout from './pages/Form/FormLayout';
+import SignUp from './pages/Authentication/SignUp';  
 import Profile from './pages/Profile';
-import Settings from './pages/Settings'; 
-import Alerts from './pages/UiElements/Alerts';
-import Buttons from './pages/UiElements/Buttons';
+import Settings from './pages/Settings';  
 import Dashboard from './pages/Dashboard';
 
 function App() {
@@ -34,8 +30,8 @@ function App() {
           path="/"
           element={
             <>
-              <PageTitle title="Dashboard | BowMarie" />
-              <Dashboard />
+              <PageTitle title="SignIn | InventoryMS" />
+              <SignIn />
             </>
           }
         />
@@ -43,7 +39,7 @@ function App() {
           path="/dashboard"
           element={
             <>
-              <PageTitle title="Dashboard | BowMarie" />
+              <PageTitle title="Dashboard | InventoryMS" />
               <Dashboard />
             </>
           }
@@ -52,7 +48,7 @@ function App() {
           path="/profile"
           element={
             <>
-              <PageTitle title="Profile | BowMarie" />
+              <PageTitle title="Profile | InventoryMS" />
               <Profile />
             </>
           }
@@ -61,7 +57,7 @@ function App() {
           path="/settings"
           element={
             <>
-              <PageTitle title="Settings | BowMarie" />
+              <PageTitle title="Settings | InventoryMS" />
               <Settings />
             </>
           }
@@ -70,7 +66,7 @@ function App() {
           path="/pages/settings"
           element={
             <>
-              <PageTitle title="Alerts | BowMarie" />
+              <PageTitle title="Setting | InventoryMS" />
               <Settings />
             </>
           }
@@ -79,7 +75,7 @@ function App() {
           path="/signin"
           element={
             <>
-              <PageTitle title="Alerts | BowMarie" />
+              <PageTitle title="SignIn | InventoryMS" />
               <SignIn />
             </>
           }
@@ -88,7 +84,7 @@ function App() {
           path="/signup"
           element={
             <>
-              <PageTitle title="Alerts | BowMarie" />
+              <PageTitle title="SignUp | InventoryMS" />
               <SignUp />
             </>
           }
