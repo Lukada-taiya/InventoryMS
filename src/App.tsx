@@ -18,7 +18,7 @@ function App() {
   }, [pathname]);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000);
+    setLoading(false);
   }, []);
 
   return loading ? (
@@ -30,7 +30,7 @@ function App() {
           path="/"
           element={
             <>
-              <PageTitle title="SignIn | BowMarie" />
+              <PageTitle title="SignIn | InventoryMS" />
               <SignIn />
             </>
           }
@@ -39,7 +39,7 @@ function App() {
           path="/dashboard"
           element={
             <>
-              <PageTitle title="Dashboard | BowMarie" />
+              <PageTitle title="Dashboard | InventoryMS" />
               <Dashboard />
             </>
           }
@@ -48,7 +48,7 @@ function App() {
           path="/profile"
           element={
             <>
-              <PageTitle title="Profile | BowMarie" />
+              <PageTitle title="Profile | InventoryMS" />
               <Profile />
             </>
           }
@@ -57,7 +57,7 @@ function App() {
           path="/settings"
           element={
             <>
-              <PageTitle title="Settings | BowMarie" />
+              <PageTitle title="Settings | InventoryMS" />
               <Settings />
             </>
           }
@@ -66,7 +66,7 @@ function App() {
           path="/pages/settings"
           element={
             <>
-              <PageTitle title="Setting | BowMarie" />
+              <PageTitle title="Setting | InventoryMS" />
               <Settings />
             </>
           }
@@ -75,7 +75,7 @@ function App() {
           path="/signin"
           element={
             <>
-              <PageTitle title="SignIn | BowMarie" />
+              <PageTitle title="SignIn | InventoryMS" />
               <SignIn />
             </>
           }
@@ -84,7 +84,7 @@ function App() {
           path="/signup"
           element={
             <>
-              <PageTitle title="SignUp | BowMarie" />
+              <PageTitle title="SignUp | InventoryMS" />
               <SignUp />
             </>
           }
