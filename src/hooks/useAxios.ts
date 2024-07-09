@@ -1,32 +1,37 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-const useAxios = () => {
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+const useAxios = () => { 
+  const [loading, setLoading] = useState<boolean>(false);
 
   const axiosInstance = axios.create({
-    baseURL: "https://localhost:7000"
+    baseURL: 'https://localhost:7000',
+    withCredentials: true,
   });
 
-  axiosInstance.interceptors.request.use((config) => {
-    return config;
-  }, (error) => {
-    return Promise.reject(error);
-  });
-  axiosInstance.interceptors.request.use((response) => {
-    return response;
-  }, (error) => {
-    return Promise.reject(error);;
-  });
+  axiosInstance.interceptors.request.use(
+    (config) => {
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
+    },
+  );
+  axiosInstance.interceptors.response.use(
+    (response) => {
+      return response;
+    },
+    (error) => {
+      return Promise.reject(error);
+    },
+  );
 
   let controller = new AbortController();
 
   useEffect(() => {
     return () => controller?.abort();
-  },[]);
+  }, []);
 
-  const sendRequest = async ({ url, method, data = {}, params = {}} : any) => {
+  const sendRequest = async ({ url, method, data = {}, params = {} }: any) => {
     controller.abort();
     controller = new AbortController();
     setLoading(true);
@@ -36,15 +41,19 @@ const useAxios = () => {
         method,
         data,
         params,
-        signal: controller.signal
+        signal: controller.signal,
       });
-      setResponse(result.data);
+      return result;
     } catch (e: any) {
-      axios.isCancel(e) ? console.error("Request cancelled", e.message) : setError(e.response ? e.response.data : e.message);
+      if (axios.isCancel(e)) {
+        console.error('Request cancelled', e.message);
+      } else {
+        throw new Error(e.response ? e.response.data : e.message);
+      }
     } finally {
       setLoading(false);
     }
   };
-  return {response, error, loading, sendRequest};
+  return {loading,sendRequest};
 };
 export default useAxios;
