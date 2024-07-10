@@ -6,7 +6,7 @@ const useAxiosAsync = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const axiosInstance = axios.create({
-    baseURL: "https://localhost:7000",
+    baseURL: "http://localhost:5173",
     withCredentials: true
   });
 
