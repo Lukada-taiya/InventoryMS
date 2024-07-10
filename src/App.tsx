@@ -8,6 +8,7 @@ import SignUp from './pages/Authentication/SignUp';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';  
 import Dashboard from './pages/Dashboard';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -34,9 +35,10 @@ function App() {
               <SignIn />
             </>
           }
-        />
+        /> 
+        <Route path="/dashboard" element={<PrivateRoute />}>        
         <Route
-          path="/dashboard"
+          path=""
           element={
             <>
               <PageTitle title="Dashboard | InventoryMS" />
@@ -44,6 +46,8 @@ function App() {
             </>
           }
         /> 
+        </Route>
+        <Route path="/profile" element={<PrivateRoute />}> 
         <Route
           path="/profile"
           element={
@@ -52,7 +56,9 @@ function App() {
               <Profile />
             </>
           }
-        />        
+        />   
+        </Route>
+        <Route path="/settings" element={<PrivateRoute />}>      
         <Route
           path="/settings"
           element={
@@ -62,6 +68,8 @@ function App() {
             </>
           }
         />  
+        </Route>
+        <Route path="/pages/setting" element={<PrivateRoute />}> 
         <Route
           path="/pages/settings"
           element={
@@ -71,7 +79,8 @@ function App() {
             </>
           }
         />
-        <Route
+        </Route>
+        {/* <Route
           path="/signin"
           element={
             <>
@@ -79,7 +88,7 @@ function App() {
               <SignIn />
             </>
           }
-        />
+        /> */}
         <Route
           path="/signup"
           element={
