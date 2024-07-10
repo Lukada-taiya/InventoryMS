@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link, Navigate } from 'react-router-dom'; 
 import Header from '../../components/Header';  
 import {logo, building} from '../../images/index'; 
 import UserIcon from '../UiElements/UserIcon';
@@ -14,7 +14,7 @@ interface StateTypes {
 }
 
 const SignUp: React.FC = () => {
-
+  const isAuthenticated = !!sessionStorage.getItem('email');
   const [state, setState] = React.useState<StateTypes>({
     name: '',
     email: '',
@@ -28,7 +28,7 @@ const SignUp: React.FC = () => {
       [key]: value,
     }));
   }
-  return (
+  return isAuthenticated ? (<Navigate to={{ pathname: '/dashboard' }} />): (
     <>
       <Header showUser={false} />
 
