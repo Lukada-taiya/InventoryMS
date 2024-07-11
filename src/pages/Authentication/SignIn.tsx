@@ -9,18 +9,19 @@ import { logo, building } from '../../images/index';
 import { EmailIcon } from '../UiElements/EmailIcon';
 import { LockIcon } from '../UiElements/LockIcon';
 import useAxios from '../../hooks/useAxios';
+import CheckBox from '../../components/Checkboxes/CheckBox';
 
 const schema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
+  chkRememberMe: z.boolean()
 });
 
 type FormFields = z.infer<typeof schema>;
 
 const SignIn: React.FC = () => {
-  const navigate = useNavigate();
-  // const {response, error, loading: loadingAsync, sendRequest : sendRequestAsync} = useAxiosAsync();
-  const { loading, sendRequest } = useAxios();
+  const navigate = useNavigate(); 
+  const { loading, sendRequest } = useAxios(); 
   const isAuthenticated = !!sessionStorage.getItem('email');
 
   const {
@@ -34,8 +35,9 @@ const SignIn: React.FC = () => {
 
   const submitHandler = async (data: any) => {
     try {
+      var urlParam = data.chkRememberMe ? "useCookies=true":"useSessionCookies=true"
       const loginRes = await sendRequest({
-        url: '/login?useCookies=true',
+        url: `/login?${urlParam}`,
         method: 'POST',
         data: data,
       });
@@ -142,7 +144,14 @@ const SignIn: React.FC = () => {
                     </span>
                   )}
                 </div>
-
+                <div className='my-4 mb-6'>
+                  <CheckBox name="chkRememberMe" register={register} label="Remember Me"/> 
+                </div>
+                {errors.chkRememberMe && (
+                    <span className="text-red-500 text-md ml-2 mt-2">
+                      {errors.chkRememberMe.message}
+                    </span>
+                  )}
                 <div className="mb-5">
                   <button
                     disabled={isSubmitting}
