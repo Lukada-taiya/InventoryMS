@@ -2,7 +2,7 @@ import React from 'react';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form'; 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import BeatLoader from 'react-spinners/BeatLoader';
 import Header from '../../components/Header';
 import { logo, building } from '../../images/index';
@@ -13,14 +13,13 @@ import CheckBox from '../../components/Checkboxes/CheckBox';
 
 const schema = z.object({
   email: z.string().email(),
-  password: z.string().min(8),
+  password: z.string(),
   chkRememberMe: z.boolean()
 });
 
 type FormFields = z.infer<typeof schema>;
 
-const SignIn: React.FC = () => {
-  const navigate = useNavigate(); 
+const SignIn: React.FC = () => { 
   const { loading, sendRequest } = useAxios(); 
   const isAuthenticated = !!sessionStorage.getItem('email');
 
@@ -48,7 +47,7 @@ const SignIn: React.FC = () => {
         }); 
         if (res && res.status === 200) {
           sessionStorage.setItem('email', res.data.email);
-          navigate('/dashboard');
+          window.location.href = "/dashboard";
         } else {
           sessionStorage.removeItem('email');
         }
