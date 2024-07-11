@@ -2,25 +2,25 @@ import React from 'react';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form'; 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import BeatLoader from 'react-spinners/BeatLoader';
 import Header from '../../components/Header';
 import { logo, building } from '../../images/index';
 import { EmailIcon } from '../UiElements/EmailIcon';
 import { LockIcon } from '../UiElements/LockIcon';
 import useAxios from '../../hooks/useAxios';
+import CheckBox from '../../components/Checkboxes/CheckBox';
 
 const schema = z.object({
   email: z.string().email(),
-  password: z.string().min(8),
+  password: z.string(),
+  chkRememberMe: z.boolean()
 });
 
 type FormFields = z.infer<typeof schema>;
 
-const SignIn: React.FC = () => {
-  const navigate = useNavigate();
-  // const {response, error, loading: loadingAsync, sendRequest : sendRequestAsync} = useAxiosAsync();
-  const { loading, sendRequest } = useAxios();
+const SignIn: React.FC = () => { 
+  const { loading, sendRequest } = useAxios(); 
   const isAuthenticated = !!sessionStorage.getItem('email');
 
   const {
@@ -34,8 +34,9 @@ const SignIn: React.FC = () => {
 
   const submitHandler = async (data: any) => {
     try {
+      var urlParam = data.chkRememberMe ? "useCookies=true":"useSessionCookies=true"
       const loginRes = await sendRequest({
-        url: '/login?useCookies=true',
+        url: `/login?${urlParam}`,
         method: 'POST',
         data: data,
       });
@@ -46,7 +47,7 @@ const SignIn: React.FC = () => {
         }); 
         if (res && res.status === 200) {
           sessionStorage.setItem('email', res.data.email);
-          navigate('/dashboard');
+          window.location.href = "/dashboard";
         } else {
           sessionStorage.removeItem('email');
         }
@@ -142,7 +143,14 @@ const SignIn: React.FC = () => {
                     </span>
                   )}
                 </div>
-
+                <div className='my-4 mb-6'>
+                  <CheckBox name="chkRememberMe" register={register} label="Remember Me"/> 
+                </div>
+                {errors.chkRememberMe && (
+                    <span className="text-red-500 text-md ml-2 mt-2">
+                      {errors.chkRememberMe.message}
+                    </span>
+                  )}
                 <div className="mb-5">
                   <button
                     disabled={isSubmitting}
